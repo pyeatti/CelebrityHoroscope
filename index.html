@@ -1,43 +1,74 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    
-
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Movie Actor Horoscope</title>
+    <link rel="stylesheet" href="./style.css" />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+      integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body>
+    <header>
+      <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#">Movie Actor Horoscope</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarNavAltMarkup"
+          aria-controls="navbarNavAltMarkup"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+          <div class="navbar-nav">
+            <a class="nav-item nav-link active" href="#"
+              >Home <span class="sr-only">(current)</span></a
+            >
+            <a class="nav-item nav-link" href="#">Filler</a>
+            <a class="nav-item nav-link" href="#">Filler</a>
+          </div>
+        </div>
+      </nav>
+    </header>
     <form action="/form/submit" method="GET">
-        <div class="searchContents">
-            <label for="site-search">Search for your Actor:</label>
-            <input type="text" name="text" class="search" id="search-text" placeholder="Search here!">
-            <input type="submit" name="submit" class="btn btn-info" id="search-button" value="Search">
-        </div>
-        </form>
+      <div class="searchContents">
+        <label for="site-search">Search for your Actor:</label>
+        <input
+          type="text"
+          name="text"
+          class="search"
+          id="search-text"
+          placeholder="Search here!"
+        />
+        <input
+          type="submit"
+          name="submit"
+          class="btn btn-info"
+          id="search-button"
+          value="Search"
+        />
+      </div>
+    </form>
 
-        <div class="container">
-            <h3 id="results"></h3>
-          
+    <div class="container">
+      <h3 id="results"></h3>
 
+      <h3 id="birthDate"></h3>
+      <h4 id="personSign"></h4>
+      <h4 id="signCompatible"></h4>
+      <h4 id="signDescription"></h4>
+    </div>
 
-            <h3 id="birthDate"></h3>
-
-
-        
-
-        </div>
-            <h4 id="personSign"></h4>
-            <h4 id= "signCompatible"></h4>
-            <h4 id= "signDescription"></h4>
-
-
-
-
-
-     
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
-        <script src="https://code.jquery.com/jquery.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+    <script src="https://code.jquery.com/jquery.js"></script>
     <script src="./script.js"></script>
-</body>
+  </body>
 </html>
