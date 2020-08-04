@@ -25,8 +25,19 @@ $("#search-button").on("click", function (event) {
 
 
 
-            // let $personId = response.results[0].id;
-            // let birthDayURL = "https://api.themoviedb.org/3/person/" + $personId + "?api_key=8ab67037c3d435e037521d6507495432";
+            let $personId = response.results[0].id;
+            let birthDayURL = "https://api.themoviedb.org/3/person/" + $personId + "?api_key=8ab67037c3d435e037521d6507495432";
+
+            $.ajax({
+                url: birthDayURL,
+                method: "GET"
+            }).then(function (response) {
+                console.log(response)
+                console.log(response.birthday)
+                $("#birthDate").text(`Date of Birth : ${response.birthday}`)
+                
+                
+            })
         })
     })
 
