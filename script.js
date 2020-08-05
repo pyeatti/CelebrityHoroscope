@@ -25,6 +25,7 @@ $("#search-button").on("click", function (event) {
         let imgURL = "https://image.tmdb.org/t/p/w300_and_h450_bestv2/" + response.results[0].profile_path;
         var img = $("<img>").attr("src", imgURL);
         $(".container").append(img);
+        currentPerson.image = imgURL;
 
 
 
