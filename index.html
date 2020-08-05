@@ -50,24 +50,39 @@
             id="search-text"
             placeholder="Search here!"
           />
-          <input
-            type="submit"
-            name="submit"
-            class="btn btn-info"
-            id="search-button"
-            value="Search"
-          />
+          <button type="button" class="btn btn-success" id="searchBtn"><svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-search" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+            <path fill-rule="evenodd" d="M10.442 10.442a1 1 0 0 1 1.415 0l3.85 3.85a1 1 0 0 1-1.414 1.415l-3.85-3.85a1 1 0 0 1 0-1.415z"/>
+            <path fill-rule="evenodd" d="M6.5 12a5.5 5.5 0 1 0 0-11 5.5 5.5 0 0 0 0 11zM13 6.5a6.5 6.5 0 1 1-13 0 6.5 6.5 0 0 1 13 0z"/>
+          </svg></button>
         </div>
       </form>
 
-      <div class="container">
-        <h3 id="results"></h3>
-
-        <h3 id="birthDate"></h3>
-        <h4 id="personSign"></h4>
-        <h4 id="signCompatible"></h4>
-        <h4 id="signDescription"></h4>
+      <div class="card mb-3" style="max-width: 540px;">
+        <div class="row no-gutters">
+          <div class="col-md-4">
+            <img src="..." class="card-img" alt="..." />
+          </div>
+          <div class="col-md-8">
+            <div class="card-body">
+              <h5 class="card-title"></h5>
+              <h6 id="birthDate"></h6>
+              <h6 id="personSign"></h6>
+              <h6 id="signCompatible"></h6>
+            </p>
+          </div>
+        </div>
       </div>
+    </div>
+    <div class="card mb-3" style="max-width: 540px;">
+      <p class="card-text" id="signDescription"></p>
+    </div>
+    <!-- <button type="button" class="btn btn-success"><svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-search" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+      <path fill-rule="evenodd" d="M10.442 10.442a1 1 0 0 1 1.415 0l3.85 3.85a1 1 0 0 1-1.414 1.415l-3.85-3.85a1 1 0 0 1 0-1.415z"/>
+      <path fill-rule="evenodd" d="M6.5 12a5.5 5.5 0 1 0 0-11 5.5 5.5 0 0 0 0 11zM13 6.5a6.5 6.5 0 1 1-13 0 6.5 6.5 0 0 1 13 0z"/>
+    </svg></button>
+     -->
+
+      
     </main>
 
     <!-- SCRIPTS -->
