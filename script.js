@@ -89,14 +89,34 @@ $("#searchBtn").on("click", function (event) {
     .then(function (response) {
       // console.log(response);
       console.log(response.compatibility);
-      $("#signCompatible").text(` Compatible with: ${response.compatibility}`);
-      console.log(response.description);
-      $(".card-text").text(`Daily Horoscope : ${response.description}`);
-
+      
       currentPerson.compatibility = response.compatibility;
       currentPerson.description = response.description;
-
+      render(currentPerson);
       array.push(currentPerson);
       localStorage.setItem("array", JSON.stringify(array));
     });
-});
+  });
+  function render(currentPerson) {
+    $("#signCompatible").text(` Compatible with: ${currentPerson.compatibility}`);
+   
+    $(".card-text").text(`Daily Horoscope : ${currentPerson.description}`);
+    
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+$("#saveBtn").on("click" , function (event) {
+  event.preventDefault();
+  console.log(event);
+   $("#savedSearch").innerHTML = (JSON.parse(localStorage.getItem("array"))); 
+})
