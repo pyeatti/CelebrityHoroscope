@@ -1,4 +1,9 @@
-let array = [];
+let actors = JSON.parse(localStorage.getItem("array"));
+if (actors === null) {
+    actors = [];
+} 
+let saveNames = actors.map( actor => actor.name);
+let currentTargetPerson = {};
 $("#searchBtn").on("click", function (event) {
   event.preventDefault();
   $(".card").css("visibility", "visible");
@@ -19,15 +24,15 @@ $("#searchBtn").on("click", function (event) {
     .then(function (response) {
       // console.log(response);
       // console.log(response.results[0].id);
-      $(".card-title").text(response.results[0].name);
+      
 
       currentPerson.name = response.results[0].name;
       // console.log(response.results[0].profile_path);
       let imgURL =
         "https://image.tmdb.org/t/p/w300_and_h450_bestv2/" +
         response.results[0].profile_path;
-      var img = $(".card-img").attr("src", imgURL);
-      $(".card-img").append(img);
+      currentPerson.imgURL = imgURL;
+      
 
       let personId = response.results[0].id;
       currentPerson.id = personId;
@@ -44,7 +49,11 @@ $("#searchBtn").on("click", function (event) {
     .then(function (response) {
       // console.log(response)
       console.log(response.birthday);
+
+     
+
       $("#birthDate").text(`Birth Date: ${response.birthday}`);
+
 
       let birthDay = response.birthday;
       currentPerson.birthday = response.birthday;
@@ -90,14 +99,45 @@ $("#searchBtn").on("click", function (event) {
     .then(function (response) {
       // console.log(response);
       console.log(response.compatibility);
+
+      
+
       $("#signCompatible").text(` Compatible with: ${response.compatibility}`);
       console.log(response.description);
       $(".card-text").text(`${response.description}`);
 
       currentPerson.compatibility = response.compatibility;
       currentPerson.description = response.description;
-
-      array.push(currentPerson);
-      localStorage.setItem("array", JSON.stringify(array));
+      render(currentPerson);
+      currentTargetPerson = currentPerson;
     });
-});
+  });
+  function render(currentPerson) {
+    $(".card-title").text(currentPerson.name);
+    let img = $(".card-img").attr("src", currentPerson.imgURL);
+    $(".card-img").append(img);
+    $("#birthDate").text(`Date of Birth : ${currentPerson.birthday}`);
+    $("#signCompatible").text(` Compatible with: ${currentPerson.compatibility}`);
+    $(".card-text").text(`Daily Horoscope : ${currentPerson.description}`);
+    
+  }
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  $("#saveBtn").on("click" , function (event) {
+    event.preventDefault();
+    actors.push(currentTargetPerson);
+      localStorage.setItem("actors", JSON.stringify(actors));
+      
+    })
+
+  $("#savedSearch").append(JSON.stringify(actors));
