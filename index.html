@@ -4,13 +4,13 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Movie Actor Horoscope</title>
-    <link rel="stylesheet" href="./styles.css" />
     <link
-      rel="stylesheet"
-      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
-      integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk"
-      crossorigin="anonymous"
+    rel="stylesheet"
+    href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+    integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk"
+    crossorigin="anonymous"
     />
+    <link rel="stylesheet" href="./styles.css" />
   </head>
   <body>
     <header>
@@ -42,13 +42,13 @@
     <main class="container">
       <form>
         <div class="searchContents">
-          <label for="site-search">Search for your Actor:</label>
+          <h1 id="welcome">Find Your Favorite Celebrity's Sign!</h1>
           <input
             type="text"
             name="text"
             class="search"
             id="search-text"
-            placeholder="Search here!"
+            placeholder="Enter Celebrity Here!"
           />
           <button type="submit" class="btn btn-success" id="searchBtn"><svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-search" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
             <path fill-rule="evenodd" d="M10.442 10.442a1 1 0 0 1 1.415 0l3.85 3.85a1 1 0 0 1-1.414 1.415l-3.85-3.85a1 1 0 0 1 0-1.415z"/>
@@ -56,33 +56,31 @@
           </svg></button>
         </div>
       </form>
-
+      <div id="celebrityInfo">
       <div class="card mb-3" style="max-width: 540px;">
         <div class="row no-gutters">
-          <div class="col-md-4">
+          <div class="col-md-5">
             <img src="" class="card-img" alt="actor image placeholder" />
           </div>
-          <div class="col-md-8">
+          <div class="col-md-7">
             <div class="card-body">
-              <h5 class="card-title"></h5>
-              <h6 id="birthDate"></h6>
-              <h6 id="personSign"></h6>
-              <h6 id="signCompatible"></h6>
+              <h2 class="card-title"></h2>
+              <h4 id="birthDate"></h4>
+              <h4 id="personSign"></h4>
+              <h4 id="signCompatible"></h4>
             </p>
           </div>
         </div>
       </div>
     </div>
     <div class="card mb-3" style="max-width: 540px;">
-      <p class="card-text" id="signDescription"></p>
-      <button type="button" class="btn btn-primary" id="saveBtn">Save</button>
+      <h5 class="horoscopeHeader">Daily Horoscope</h5>
+      <p class="card-text p-2" id="signDescription"></p>
+      <!-- <button type="button" class="btn btn-primary btn-lg btn-block">Block level button</button> -->
+      <button type="button" class="btn btn-success p-2" id="saveBtn">Save</button>
     </div>
-    <!-- <button type="button" class="btn btn-success"><svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-search" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-      <path fill-rule="evenodd" d="M10.442 10.442a1 1 0 0 1 1.415 0l3.85 3.85a1 1 0 0 1-1.414 1.415l-3.85-3.85a1 1 0 0 1 0-1.415z"/>
-      <path fill-rule="evenodd" d="M6.5 12a5.5 5.5 0 1 0 0-11 5.5 5.5 0 0 0 0 11zM13 6.5a6.5 6.5 0 1 1-13 0 6.5 6.5 0 0 1 13 0z"/>
-    </svg></button>
-     -->
-
+  </div>
+ 
       
     </main>
 
