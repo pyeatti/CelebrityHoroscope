@@ -1,8 +1,8 @@
 let array = [];
 $("#searchBtn").on("click", function (event) {
+  event.preventDefault();
   $(".card").css("visibility", "visible");
   let currentPerson = {};
-  event.preventDefault();
   let $searchPerson = $("#search-text").val();
   let queryURL =
     "http://api.themoviedb.org/3/search/person?query=" +
