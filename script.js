@@ -2,6 +2,7 @@ let array = [];
 $("#searchBtn").on("click", function (event) {
   event.preventDefault();
   $(".card").css("visibility", "visible");
+  $("#saveBtn").css("visibility", "visible");
   let currentPerson = {};
   let $searchPerson = $("#search-text").val();
   let queryURL =
@@ -43,7 +44,7 @@ $("#searchBtn").on("click", function (event) {
     .then(function (response) {
       // console.log(response)
       console.log(response.birthday);
-      $("#birthDate").text(`Date of Birth : ${response.birthday}`);
+      $("#birthDate").text(`Birth Date: ${response.birthday}`);
 
       let birthDay = response.birthday;
       currentPerson.birthday = response.birthday;
@@ -64,7 +65,7 @@ $("#searchBtn").on("click", function (event) {
 
     .then(function (response) {
       console.log(response);
-      $("#personSign").text(response);
+      $("#personSign").text(`Personal sign: ${response}`);
       let sign = response;
       currentPerson.sign = sign;
 
@@ -91,7 +92,7 @@ $("#searchBtn").on("click", function (event) {
       console.log(response.compatibility);
       $("#signCompatible").text(` Compatible with: ${response.compatibility}`);
       console.log(response.description);
-      $(".card-text").text(`Daily Horoscope : ${response.description}`);
+      $(".card-text").text(`${response.description}`);
 
       currentPerson.compatibility = response.compatibility;
       currentPerson.description = response.description;
