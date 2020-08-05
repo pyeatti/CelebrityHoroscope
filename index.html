@@ -29,48 +29,47 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
           <div class="navbar-nav">
-            <a class="nav-item nav-link active" href="#"
+            <a class="nav-item nav-link active" href="./home.html"
               >Home <span class="sr-only">(current)</span></a
             >
-            <a class="nav-item nav-link" href="#">Filler</a>
-            <a class="nav-item nav-link" href="#">Filler</a>
+            <a class="nav-item nav-link" href="./index.html">Search</a>
+            <a class="nav-item nav-link" href="./end.html">Past Searches</a>
           </div>
         </div>
       </nav>
     </header>
 
-    <Main class="container">
+    <main class="container">
+      <form action="/form/submit" method="GET">
+        <div class="searchContents">
+          <label for="site-search">Search for your Actor:</label>
+          <input
+            type="text"
+            name="text"
+            class="search"
+            id="search-text"
+            placeholder="Search here!"
+          />
+          <input
+            type="submit"
+            name="submit"
+            class="btn btn-info"
+            id="search-button"
+            value="Search"
+          />
+        </div>
+      </form>
 
-    </Main>
-    <form action="/form/submit" method="GET">
-      <div class="searchContents">
-        <label for="site-search">Search for your Actor:</label>
-        <input
-          type="text"
-          name="text"
-          class="search"
-          id="search-text"
-          placeholder="Search here!"
-        />
-        <input
-          type="submit"
-          name="submit"
-          class="btn btn-info"
-          id="search-button"
-          value="Search"
-        />
+      <div class="container">
+        <h3 id="results"></h3>
+
+        <h3 id="birthDate"></h3>
+        <h4 id="personSign"></h4>
+        <h4 id="signCompatible"></h4>
+        <h4 id="signDescription"></h4>
       </div>
-    </form>
+    </main>
 
-    <div class="container">
-      <h3 id="results"></h3>
-
-      <h3 id="birthDate"></h3>
-      <h4 id="personSign"></h4>
-      <h4 id="signCompatible"></h4>
-      <h4 id="signDescription"></h4>
-    </div>
-  </main>
     <!-- SCRIPTS -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
     <script src="https://code.jquery.com/jquery.js"></script>
