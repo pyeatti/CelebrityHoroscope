@@ -1,6 +1,8 @@
 
 
+let array = [];
 $("#search-button").on("click", function (event) {
+    let currentPerson = {};
     event.preventDefault()
     let $searchPerson = $("#search-text").val();
     let queryURL = "http://api.themoviedb.org/3/search/person?query=" + $searchPerson + "&api_key=8ab67037c3d435e037521d6507495432";
@@ -17,6 +19,8 @@ $("#search-button").on("click", function (event) {
         // console.log(response);
         // console.log(response.results[0].id);
         $("#results").text(response.results[0].name)
+    
+        currentPerson.name= response.results[0].name
         // console.log(response.results[0].profile_path);
         let imgURL = "https://image.tmdb.org/t/p/w300_and_h450_bestv2/" + response.results[0].profile_path;
         var img = $("<img>").attr("src", imgURL);
@@ -25,8 +29,9 @@ $("#search-button").on("click", function (event) {
 
 
 
-        let $personId = response.results[0].id;
-        let birthDayURL = "https://api.themoviedb.org/3/person/" + $personId + "?api_key=8ab67037c3d435e037521d6507495432";
+        let personId = response.results[0].id;
+        currentPerson.id= personId
+        let birthDayURL = "https://api.themoviedb.org/3/person/" + personId + "?api_key=8ab67037c3d435e037521d6507495432";
 
         return $.ajax({
             url: birthDayURL,
@@ -40,11 +45,12 @@ $("#search-button").on("click", function (event) {
 
 
 
-            let $birthDay = response.birthday;
+            let birthDay = response.birthday;
+            currentPerson.birthday= response.birthday;
             var settings = {
                 "async": true,
                 "crossDomain": true,
-                "url": "https://zodiac-sign.p.rapidapi.com/sign?date=" + $birthDay,
+                "url": "https://zodiac-sign.p.rapidapi.com/sign?date=" + birthDay,
                 "method": "GET",
                 "headers": {
                     "x-rapidapi-host": "zodiac-sign.p.rapidapi.com",
@@ -58,12 +64,13 @@ $("#search-button").on("click", function (event) {
         .then(function (response) {
             console.log(response);
             $("#personSign").text(response)
-            let $sign = response;
+            let sign = response;
+            currentPerson.sign= sign;
             
             var horoScope = {
                 "async": true,
                 "crossDomain": true,
-                "url": "https://sameer-kumar-aztro-v1.p.rapidapi.com/?sign=" + $sign + "&day=today",
+                "url": "https://sameer-kumar-aztro-v1.p.rapidapi.com/?sign=" + sign + "&day=today",
                 "method": "POST",
                 "headers": {
                     "x-rapidapi-host": "sameer-kumar-aztro-v1.p.rapidapi.com",
@@ -81,6 +88,11 @@ $("#search-button").on("click", function (event) {
             console.log(response.description);
             $("#signDescription").text(`Daily Horoscope : ${response.description}`)
 
+            currentPerson.compatibility= response.compatibility;
+            currentPerson.description= response.description;
+
+            array.push(currentPerson)
+            localStorage.setItem("array", JSON.stringify(array));
         })
 })
 
