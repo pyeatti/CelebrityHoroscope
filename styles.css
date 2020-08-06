@@ -1,6 +1,10 @@
 body {
   font-family: Arial, Helvetica, sans-serif;
+<<<<<<< HEAD
 
+=======
+  /* background-color: #f1f1f1; */
+>>>>>>> master
 }
 
 .navbar-nav {
@@ -11,8 +15,10 @@ body {
   margin-right: 10px;
 }
 
-.card {
+.card,
+#saveBtn {
   visibility: hidden;
+<<<<<<< HEAD
   
 }
 .footer {
@@ -34,3 +40,44 @@ body {
 .container {
   min-height: calc(90vh - 50px);
 }
+=======
+}
+
+.card {
+  margin: 0 auto; /* Added */
+  float: none; /* Added */
+  margin-bottom: 10px; /* Added */
+}
+
+#welcome {
+  margin-top: 5rem;
+  text-align: center;
+}
+.searchContents {
+  text-align: center;
+  margin-bottom: 5rem;
+}
+
+#celebrityInfo {
+  align-content: center;
+}
+
+.card-text {
+  text-align: center;
+}
+
+.horoscopeHeader {
+  padding-bottom: 0.25rem;
+  text-align: center;
+  border-bottom: 2px;
+  border-bottom-style: solid;
+  border-color: grey;
+}
+
+#saveBtn {
+  bottom: -57px;
+  right: 0;
+  position: absolute;
+  max-width: 5rem;
+}
+>>>>>>> master
