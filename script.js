@@ -114,11 +114,45 @@ $("#searchBtn").on("click", function (event) {
     $("#birthDate").text(`Date of Birth : ${currentPerson.birthday}`);
     $("#signCompatible").text(` Compatible with: ${currentPerson.compatibility}`);
     $(".card-text").text(`Daily Horoscope : ${currentPerson.description}`);
+    $(".signImg").attr("src" , findSignImg(currentPerson.sign))
+    $(".signCompatibleImg").attr("src" , findSignImg(currentPerson.compatibility))
     
   }
   
   
-  
+  function findSignImg(sign) {
+
+    switch (sign) {
+      case "Aries":
+        return "./signImages/aries.png" 
+      case "Taurus":
+        return "./signImages/taurus.png" 
+      case "Gemini":
+        return "./signImages/gemini.png" 
+      case "Cancer":
+        return "./signImages/cancer.png" 
+      case "Leo":
+        return "./signImages/leo.png" 
+      case "Virgo":
+        return "./signImages/virgo.png" 
+      case "Libra":
+        return "./signImages/libra.png" 
+      case "Scorpio":
+        return "./signImages/scorpio.png" 
+      case "Sagittarius":
+        return "./signImages/sagittarius.png" 
+      case "Capricorn":
+        return "./signImages/capricorn.png" 
+      case "Aquarius":
+        return "./signImages/aquarius.png" 
+      case "Pisces":
+        return "./signImages/pisces.png" 
+        
+ 
+      default:
+        break;
+    }
+  }
   
   
   
