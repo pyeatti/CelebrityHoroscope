@@ -7,7 +7,7 @@ let saveNames = actors.map( actor => actor.name);
 console.log(saveNames)
 for (let i = 0; i < saveNames.length; i++) {
     const actor= actors[i];
-    $("#savedSearch").append(`<tr><td><button class="loadActor" data-sequence="${i}">${actor.name}</button></tr></td>`);
+    $("#savedSearch").append(`<ul class="list-group"><li class="loadActor list-group-item" data-sequence="${i}">${actor.name}</li></ul>`);
     
 }
 $(".loadActor").on("click" , function (event) {
