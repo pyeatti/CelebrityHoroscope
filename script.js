@@ -1,4 +1,4 @@
-let actors = JSON.parse(localStorage.getItem("array"));
+let actors = JSON.parse(localStorage.getItem("actors"));
 if (actors === null) {
     actors = [];
 } 
@@ -123,10 +123,12 @@ $("#searchBtn").on("click", function (event) {
   
   
   $("#saveBtn").on("click" , function (event) {
+    console.log(currentTargetPerson)
     event.preventDefault();
+    if (!actors.some(actor => actor.name === currentTargetPerson.name)) 
     actors.push(currentTargetPerson);
       localStorage.setItem("actors", JSON.stringify(actors));
-      
+    
     })
 
-  $("#savedSearch").append(JSON.stringify(actors));
+  
