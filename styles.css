@@ -1,5 +1,6 @@
 body {
   font-family: Arial, Helvetica, sans-serif;
+
 }
 
 .navbar-nav {
@@ -15,12 +16,21 @@ body {
   
 }
 .footer {
-  position: fixed;
+  text-align: center;
+  font-style: italic;
+  font-size: large;
+  color: pink;
+  height: 50px;
+  
+}
+.footerPosition {
+  padding-bottom: 0px;
+  position: relative;
+  right: 0;
   left: 0;
-   bottom: 0;
-   width: 100%;
-   text-align: center;
-   font-style: italic;
-   font-size: large;
-
+  bottom: 0;
+  width: 100%;
+}
+.container {
+  min-height: calc(90vh - 50px);
 }
