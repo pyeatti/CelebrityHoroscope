@@ -8,7 +8,7 @@ body {
   ); */
   /* background-color: #f1f1f1; */
 }
-
+/* NAV STYLING */
 .navbar-nav {
   float: right;
   position: fixed;
@@ -30,16 +30,17 @@ a.nav-item:hover {
   font-weight: bold;
   font-style: italic;
 }
-a.nav-item:active {
+/* a.nav-item:active {
   color: blue !important;
   font-weight: bold;
   font-style: italic;
-}
+} */
 
 .bg-light {
   background-color: transparent !important;
 }
 
+/* CARD STYLING */
 .card,
 #saveBtn {
   visibility: hidden;
@@ -71,11 +72,15 @@ a.nav-item:active {
 }
 
 .horoscopeHeader {
-  padding-bottom: 0.25rem;
+  padding-top: 0.5rem;
+  /* padding-bottom: 0.25rem; */
   text-align: center;
-  border-bottom: 2px;
+  /* border-bottom: 2px;
   border-bottom-style: solid;
-  border-color: grey;
+  border-color: grey; */
+}
+.card-img {
+  padding: 1rem;
 }
 
 #saveBtn {
@@ -83,4 +88,32 @@ a.nav-item:active {
   right: 0;
   position: absolute;
   max-width: 5rem;
+}
+/* JUMBOTRON STYLING */
+.jumbotron {
+  background-color: rgb(255, 180, 192) !important;
+  text-align: center;
+  margin-top: 20rem;
+  align-content: center;
+}
+
+h1.jumboHeader {
+  font-weight: bolder;
+}
+
+@media only screen and (max-width: 980px) {
+  .jumbotron {
+    background-color: rgb(255, 180, 192) !important;
+    text-align: center;
+    margin-top: 10rem;
+    align-content: center;
+  }
+}
+@media only screen and (max-width: 780px) {
+  .jumbotron {
+    background-color: rgb(255, 180, 192) !important;
+    text-align: center;
+    margin-top: 0rem;
+    align-content: center;
+  }
 }
