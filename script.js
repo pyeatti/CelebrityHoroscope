@@ -105,6 +105,8 @@ $("#searchBtn").on("click", function (event) {
       currentTargetPerson = currentPerson;
     });
   });
+ 
+  
   function render(currentPerson) {
     $(".card-title").text(currentPerson.name);
     let img = $(".card-img").attr("src", currentPerson.imgURL);
@@ -114,8 +116,6 @@ $("#searchBtn").on("click", function (event) {
     $(".card-text").text(`Daily Horoscope : ${currentPerson.description}`);
     
   }
-  
-  
   
   
   
