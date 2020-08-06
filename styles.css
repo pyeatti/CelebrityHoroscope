@@ -1,10 +1,7 @@
 body {
   font-family: Arial, Helvetica, sans-serif;
-<<<<<<< HEAD
 
-=======
   /* background-color: #f1f1f1; */
->>>>>>> master
 }
 
 .navbar-nav {
@@ -18,8 +15,6 @@ body {
 .card,
 #saveBtn {
   visibility: hidden;
-<<<<<<< HEAD
-  
 }
 .footer {
   text-align: center;
@@ -27,7 +22,6 @@ body {
   font-size: large;
   color: pink;
   height: 50px;
-  
 }
 .footerPosition {
   padding-bottom: 0px;
@@ -39,8 +33,6 @@ body {
 }
 .container {
   min-height: calc(90vh - 50px);
-}
-=======
 }
 
 .card {
@@ -80,4 +72,3 @@ body {
   position: absolute;
   max-width: 5rem;
 }
->>>>>>> master
