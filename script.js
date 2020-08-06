@@ -1,4 +1,4 @@
-let actors = JSON.parse(localStorage.getItem("array"));
+let actors = JSON.parse(localStorage.getItem("actors"));
 if (actors === null) {
   actors = [];
 }
@@ -104,20 +104,35 @@ $("#searchBtn").on("click", function (event) {
       render(currentPerson);
       currentTargetPerson = currentPerson;
     });
-});
-function render(currentPerson) {
-  $(".card-title").text(currentPerson.name);
-  let img = $(".card-img").attr("src", currentPerson.imgURL);
-  $(".card-img").append(img);
-  $("#birthDate").text(`Date of Birth : ${currentPerson.birthday}`);
-  $("#signCompatible").text(` Compatible with: ${currentPerson.compatibility}`);
-  $(".card-text").text(`Daily Horoscope : ${currentPerson.description}`);
-}
+  });
+  function render(currentPerson) {
+    $(".card-title").text(currentPerson.name);
+    let img = $(".card-img").attr("src", currentPerson.imgURL);
+    $(".card-img").append(img);
+    $("#birthDate").text(`Date of Birth : ${currentPerson.birthday}`);
+    $("#signCompatible").text(` Compatible with: ${currentPerson.compatibility}`);
+    $(".card-text").text(`Daily Horoscope : ${currentPerson.description}`);
+    
+  }
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  $("#saveBtn").on("click" , function (event) {
+    console.log(currentTargetPerson)
+    event.preventDefault();
+    if (!actors.some(actor => actor.name === currentTargetPerson.name)) 
+    actors.push(currentTargetPerson);
+      localStorage.setItem("actors", JSON.stringify(actors));
+    
+    })
 
-$("#saveBtn").on("click", function (event) {
-  event.preventDefault();
-  actors.push(currentTargetPerson);
-  localStorage.setItem("actors", JSON.stringify(actors));
-});
-
-$("#savedSearch").append(JSON.stringify(actors));
+  
