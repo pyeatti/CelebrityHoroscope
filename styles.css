@@ -1,12 +1,14 @@
 body {
   font-family: Arial, Helvetica, sans-serif;
-<<<<<<< HEAD
-
-=======
+  /* background: rgb(11, 11, 164);
+  background: linear-gradient(
+    90deg,
+    rgba(11, 11, 164, 1) 2%,
+    rgba(0, 212, 255, 1) 100%
+  ); */
   /* background-color: #f1f1f1; */
->>>>>>> master
 }
-
+/* NAV STYLING */
 .navbar-nav {
   float: right;
   position: fixed;
@@ -15,11 +17,33 @@ body {
   margin-right: 10px;
 }
 
+a.navbar-brand {
+  font-weight: bold;
+  color: pink !important;
+}
+
+a.nav-item {
+  color: grey !important;
+}
+a.nav-item:hover {
+  color: pink !important;
+  font-weight: bold;
+  font-style: italic;
+}
+/* a.nav-item:active {
+  color: blue !important;
+  font-weight: bold;
+  font-style: italic;
+} */
+
+.bg-light {
+  background-color: transparent !important;
+}
+
+/* CARD STYLING */
 .card,
 #saveBtn {
   visibility: hidden;
-<<<<<<< HEAD
-  
 }
 .footer {
   text-align: center;
@@ -27,7 +51,6 @@ body {
   font-size: large;
   color: pink;
   height: 50px;
-  
 }
 .footerPosition {
   padding-bottom: 0px;
@@ -40,8 +63,6 @@ body {
 .container {
   min-height: calc(90vh - 50px);
 }
-=======
-}
 
 .card {
   margin: 0 auto; /* Added */
@@ -53,6 +74,7 @@ body {
   margin-top: 5rem;
   text-align: center;
 }
+
 .searchContents {
   text-align: center;
   margin-bottom: 5rem;
@@ -60,6 +82,7 @@ body {
 
 #celebrityInfo {
   align-content: center;
+  /* color: white; */
 }
 
 .card-text {
@@ -67,11 +90,15 @@ body {
 }
 
 .horoscopeHeader {
-  padding-bottom: 0.25rem;
+  padding-top: 0.5rem;
+  /* padding-bottom: 0.25rem; */
   text-align: center;
-  border-bottom: 2px;
+  /* border-bottom: 2px;
   border-bottom-style: solid;
-  border-color: grey;
+  border-color: grey; */
+}
+.card-img {
+  padding: 1rem;
 }
 
 #saveBtn {
@@ -80,4 +107,31 @@ body {
   position: absolute;
   max-width: 5rem;
 }
->>>>>>> master
+/* JUMBOTRON STYLING */
+.jumbotron {
+  background-color: rgb(255, 180, 192) !important;
+  text-align: center;
+  margin-top: 20rem;
+  align-content: center;
+}
+
+h1.jumboHeader {
+  font-weight: bolder;
+}
+
+@media only screen and (max-width: 980px) {
+  .jumbotron {
+    background-color: rgb(255, 180, 192) !important;
+    text-align: center;
+    margin-top: 10rem;
+    align-content: center;
+  }
+}
+@media only screen and (max-width: 780px) {
+  .jumbotron {
+    background-color: rgb(255, 180, 192) !important;
+    text-align: center;
+    margin-top: 0rem;
+    align-content: center;
+  }
+}
