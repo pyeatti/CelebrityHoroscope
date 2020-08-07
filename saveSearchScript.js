@@ -53,3 +53,8 @@ $(".loadActor").on("click" , function (event) {
         break;
     }
   }
+
+  $("#clearSearch").on("click", function (event) {
+    console.log(event);
+    localStorage.removeItem("actors");
+  })
