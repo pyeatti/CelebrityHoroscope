@@ -1,4 +1,4 @@
-# Movie Actor Horoscope
+# Celebrity Horoscope
 
 ## Project Description
 
