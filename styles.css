@@ -1,14 +1,29 @@
 body {
   font-family: Arial, Helvetica, sans-serif;
-  /* background: rgb(11, 11, 164);
+  background: rgb(46, 255, 128);
   background: linear-gradient(
     90deg,
-    rgba(11, 11, 164, 1) 2%,
+    rgba(46, 255, 128, 1) 2%,
     rgba(0, 212, 255, 1) 100%
-  ); */
-  /* background-color: #f1f1f1; */
+  );
 }
+
 /* NAV STYLING */
+.navbar {
+  background: rgb(46, 255, 128);
+  background: linear-gradient(
+    90deg,
+    rgba(46, 255, 128, 1) 2%,
+    rgba(0, 212, 255, 1) 100%
+  );
+  z-index: 2;
+}
+
+a.navbar-brand {
+  font-weight: bold;
+  color: white !important;
+}
+
 .navbar-nav {
   float: right;
   position: fixed;
@@ -17,16 +32,12 @@ body {
   margin-right: 10px;
 }
 
-a.navbar-brand {
-  font-weight: bold;
-  color: pink !important;
-}
-
 a.nav-item {
-  color: grey !important;
+  color: white !important;
+  text-align: right;
 }
 a.nav-item:hover {
-  color: pink !important;
+  color: rgb(46, 255, 128) !important;
   font-weight: bold;
   font-style: italic;
 }
@@ -36,41 +47,28 @@ a.nav-item:hover {
   font-style: italic;
 } */
 
-.bg-light {
-  background-color: transparent !important;
-}
-
 /* CARD STYLING */
 .card,
 #saveBtn {
   visibility: hidden;
-}
-.footer {
-  text-align: center;
-  font-style: italic;
-  font-size: large;
-  color: pink;
-  height: 50px;
-}
-.footerPosition {
-  padding-bottom: 0px;
-  position: relative;
-  right: 0;
-  left: 0;
-  bottom: 0;
-  width: 100%;
 }
 .container {
   min-height: calc(90vh - 50px);
 }
 
 .card {
+  color: white;
+  background: transparent;
   margin: 0 auto; /* Added */
   float: none; /* Added */
-  margin-bottom: 10px; /* Added */
+}
+
+p#personSign {
+  color: rgb(46, 255, 128);
 }
 
 #welcome {
+  color: white;
   margin-top: 5rem;
   text-align: center;
 }
@@ -82,13 +80,29 @@ a.nav-item:hover {
 
 #celebrityInfo {
   align-content: center;
+  max-height: 200px;
   /* color: white; */
+}
+
+div.row.no-gutters.swag {
+  align-content: center !important;
 }
 
 .card-text {
   text-align: center;
 }
 
+.card-img {
+  border-radius: 4px !important;
+}
+p#personSign,
+p#signCompatible {
+  font-size: 0.85rem;
+  color: rgb(46, 255, 128);
+}
+
+#personSign,
+#signCompatible,
 .horoscopeHeader {
   padding-top: 0.5rem;
   /* padding-bottom: 0.25rem; */
@@ -97,19 +111,40 @@ a.nav-item:hover {
   border-bottom-style: solid;
   border-color: grey; */
 }
-.card-img {
-  padding: 1rem;
+
+.signCompatibleImg,
+.signImg {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 60%;
+  padding-top: 0.25rem;
+}
+
+#signDescription {
+  text-align: left;
+}
+
+.contentAlign {
+  align-content: center !important;
 }
 
 #saveBtn {
-  bottom: -57px;
-  right: 0;
+  z-index: 2;
+  bottom: 3rem;
+  left: 5rem;
   position: absolute;
-  max-width: 5rem;
+  max-width: 10rem;
+  color: rgba(0, 212, 255, 1);
 }
 /* JUMBOTRON STYLING */
 .jumbotron {
-  background-color: rgb(255, 180, 192) !important;
+  background: rgb(46, 255, 128);
+  background: linear-gradient(
+    90deg,
+    rgba(46, 255, 128, 1) 2%,
+    rgba(0, 212, 255, 1) 100%
+  ) !important;
   text-align: center;
   margin-top: 20rem;
   align-content: center;
@@ -117,14 +152,51 @@ a.nav-item:hover {
 
 h1.jumboHeader {
   font-weight: bolder;
+  color: white;
 }
 
+p.lead {
+  text-align: center;
+}
+
+p.footer {
+  color: white !important;
+}
+.footer {
+  color: white;
+  text-align: center;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 60px;
+  line-height: 60px;
+  background: rgb(46, 255, 128);
+  background: linear-gradient(
+    90deg,
+    rgba(46, 255, 128, 1) 2%,
+    rgba(0, 212, 255, 1) 100%
+  ) !important;
+}
+/* .footerPosition {
+  padding-bottom: 0px;
+  position: relative;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+} */
 @media only screen and (max-width: 980px) {
   .jumbotron {
     background-color: rgb(255, 180, 192) !important;
     text-align: center;
     margin-top: 10rem;
     align-content: center;
+  }
+
+  .card {
+    background: transparent;
+    align-content: center;
+    width: 100%;
   }
 }
 @media only screen and (max-width: 780px) {
@@ -133,6 +205,22 @@ h1.jumboHeader {
     text-align: center;
     margin-top: 0rem;
     align-content: center;
+  }
+
+  .footer {
+    color: white;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 60px;
+    line-height: 60px;
+    background-color: #f5f5f5;
+  }
+  #saveBtn {
+    z-index: 2;
+    color: rgba(0, 212, 255, 1);
+    position: relative;
+    max-width: 5rem;
   }
 }
 /* border-radius: 50% */
