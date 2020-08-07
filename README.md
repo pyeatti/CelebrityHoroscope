@@ -22,6 +22,10 @@ https://rapidapi.com/tirtain/api/horoscope5
 
 https://github.com/pyeatti/MovieActorHoroscope
 
+## Deployed Site
+
+https://pyeatti.github.io/CelebrityHoroscope/
+
 _saving for deployed site_
 
 ## Images
