@@ -104,69 +104,64 @@ $("#searchBtn").on("click", function (event) {
       render(currentPerson);
       currentTargetPerson = currentPerson;
     });
-  });
- 
-  
-  function render(currentPerson) {
-    $(".card-title").text(currentPerson.name);
-    let img = $(".card-img").attr("src", currentPerson.imgURL);
-    $(".card-img").append(img);
-    $("#birthDate").text(`Date of Birth : ${currentPerson.birthday}`);
-    $("#signCompatible").text(` Compatible with: ${currentPerson.compatibility}`);
-    $(".card-text").text(`Daily Horoscope : ${currentPerson.description}`);
-    $(".signImg").attr("src" , findSignImg(currentPerson.sign))
-    $(".signCompatibleImg").attr("src" , findSignImg(currentPerson.compatibility))
-    
-  }
-  
-  
-  function findSignImg(sign) {
+});
 
-    switch (sign) {
-      case "Aries":
-        return "./signImages/aries.png" 
-      case "Taurus":
-        return "./signImages/taurus.png" 
-      case "Gemini":
-        return "./signImages/gemini.png" 
-      case "Cancer":
-        return "./signImages/cancer.png" 
-      case "Leo":
-        return "./signImages/leo.png" 
-      case "Virgo":
-        return "./signImages/virgo.png" 
-      case "Libra":
-        return "./signImages/libra.png" 
-      case "Scorpio":
-        return "./signImages/scorpio.png" 
-      case "Sagittarius":
-        return "./signImages/sagittarius.png" 
-      case "Capricorn":
-        return "./signImages/capricorn.png" 
-      case "Aquarius":
-        return "./signImages/aquarius.png" 
-      case "Pisces":
-        return "./signImages/pisces.png" 
-        
- 
-      default:
-        break;
-    }
+
+function render(currentPerson) {
+  $(".card-title").text(currentPerson.name);
+  let img = $(".card-img").attr("src", currentPerson.imgURL);
+  $(".card-img").append(img);
+  $("#birthDate").text(`Date of Birth : ${currentPerson.birthday}`);
+  $("#signCompatible").text(` Compatible with: ${currentPerson.compatibility}`);
+  $(".card-text").text(`Daily Horoscope : ${currentPerson.description}`);
+  $(".signImg").attr("src", findSignImg(currentPerson.sign))
+  $(".signCompatibleImg").attr("src", findSignImg(currentPerson.compatibility))
+
+}
+
+
+function findSignImg(sign) {
+
+  switch (sign) {
+    case "Aries":
+      return "./signImages/aries.png"
+    case "Taurus":
+      return "./signImages/taurus.png"
+    case "Gemini":
+      return "./signImages/gemini.png"
+    case "Cancer":
+      return "./signImages/cancer.png"
+    case "Leo":
+      return "./signImages/leo.png"
+    case "Virgo":
+      return "./signImages/virgo.png"
+    case "Libra":
+      return "./signImages/libra.png"
+    case "Scorpio":
+      return "./signImages/scorpio.png"
+    case "Sagittarius":
+      return "./signImages/sagittarius.png"
+    case "Capricorn":
+      return "./signImages/capricorn.png"
+    case "Aquarius":
+      return "./signImages/aquarius.png"
+    case "Pisces":
+      return "./signImages/pisces.png"
+
+
+    default:
+      break;
   }
-  
-  
-  
-  
-  
-  
-  
-  $("#saveBtn").on("click" , function (event) {
-    console.log(currentTargetPerson)
-    event.preventDefault();
-    if (!actors.some(actor => actor.name === currentTargetPerson.name)) 
+}
+
+
+$("#saveBtn").on("click", function (event) {
+  console.log(currentTargetPerson)
+  event.preventDefault();
+  if (!actors.some(actor => actor.name === currentTargetPerson.name))
     actors.push(currentTargetPerson);
-      localStorage.setItem("actors", JSON.stringify(actors));
-    
-    })
+  localStorage.setItem("actors", JSON.stringify(actors));
 
-  
+})
+
+
